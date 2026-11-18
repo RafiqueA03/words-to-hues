@@ -18,3 +18,10 @@ venv/
 
 # Camera-ready manuscript working copy (private; never commit)
 Camera_ready_From_Words_to_Hues__How_LLMs_Encode_Perceptual_Colour_Space/
+
+# Credentials (NDIF / Hugging Face keys live in nnsight's own config, never here)
+.env.*
+*.key
+*secret*
+*credentials*
+ndif_key*
