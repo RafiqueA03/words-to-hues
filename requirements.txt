@@ -1,0 +1,19 @@
+# Step 1 (extraction)
+nnsight
+torch
+
+# All steps
+numpy
+
+# Steps 3-4 and analyses
+scipy
+pandas
+colour-science
+
+# analyses/synthetic_circle.py: scikit-learn 1.10 changes the MDS default
+# initialisation and removes the `dissimilarity` argument, which changes the
+# results; tested with scikit-learn 1.9.1
+scikit-learn<1.10
+
+# analyses/frequency.py fetch (Google Books Ngram API)
+requests

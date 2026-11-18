@@ -1,0 +1,20 @@
+# Generated outputs (large; not tracked)
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+.env
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Camera-ready manuscript working copy (private; never commit)
+Camera_ready_From_Words_to_Hues__How_LLMs_Encode_Perceptual_Colour_Space/
