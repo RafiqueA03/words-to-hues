@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- TITLE (B2 pending): update <title>, og:title, .title-sub and the BibTeX title -->
 <title>From Words to Hues</title>
 <meta name="description" content="From Words to Hues (EACL 2027): do the hidden states of text-only LLMs recover human colour-naming geometry and the hue circle?">
 <meta property="og:title" content="From Words to Hues">
@@ -200,7 +199,7 @@
       <div>
         <div class="venue"><b>EACL 2027</b> &middot; Main Conference &middot; Athens</div>
         <h1 class="title">From Words<br>to Hues</h1>
-        <p class="title-sub">How LLMs Encode Perceptual Colour Space</p>
+        <p class="title-sub">How LLM Representations Align with Human Colour-Naming Geometry</p>
         <div class="authors">
           <span>Rafique Ahmed<sup>1</sup></span><span>Dimitris Mylonas<sup>1</sup></span><span>Giovanni Luca Masala<sup>2</sup></span><span>Alexandros Koliousis<sup>1</sup></span>
         </div>
@@ -279,8 +278,8 @@
     </figure>
     <div class="claims">
       <div class="claim"><b><i class="fa-solid fa-shuffle"></i>Correspondence matters</b><p>Permuting colour labels, or rebuilding centroids from names generated for other colours, reduces RSA to chance.</p></div>
-      <div class="claim"><b><i class="fa-solid fa-layer-group"></i>Neighbourhoods add signal</b><p>Centroids align more strongly than the target term's own representation and than static fastText embeddings.</p></div>
-      <div class="claim"><b><i class="fa-solid fa-sliders"></i>Robust to choices</b><p>The peak layer is unchanged across alternative similarity measures and RSA statistics, and base vs instruction-tuned Llama-3.1-8B reach comparable peaks.</p></div>
+      <div class="claim"><b><i class="fa-solid fa-layer-group"></i>Neighbourhoods add signal</b><p>Centroids align more strongly than static fastText embeddings and, for Llama-3.1-8B, than the target term's own representation.</p></div>
+      <div class="claim"><b><i class="fa-solid fa-sliders"></i>Robust to choices</b><p>The peak layer is unchanged with cosine instead of Pearson similarity and, for Llama-3.1-8B, across alternative human-similarity measures and RSA statistics; base and instruction-tuned Llama-3.1-8B reach comparable peaks.</p></div>
     </div>
   </div>
 </section>
@@ -341,7 +340,7 @@
     <h2>Accessible in model outputs<span class="num">05</span></h2>
     <figure>
       <div class="img narrow"><img src="static/img/eval_sorting_BE.png" alt="Hue sorting accuracy for British English" loading="lazy"></div>
-      <figcaption><b>Hue sorting &middot; British English</b>Mean Spearman's &rho; over five runs against the CAM16-UCS hue order (left) and the model's Procrustes-aligned MDS order (right). Models sort basic colour terms more accurately than non-basic terms, and the basic-term advantage also holds in Spanish and French.</figcaption>
+      <figcaption><b>Hue sorting &middot; British English</b>Mean Spearman's &rho; over five runs against the CAM16-UCS hue order (left) and the model's Procrustes-aligned MDS order (right). Most models sort basic colour terms more accurately than non-basic terms, and the basic-term advantage holds on average in Spanish and French.</figcaption>
     </figure>
     <p class="note">The perceptual grounding in this design lies in the human reference data. Alignment shows that model representations recover geometry correlated with human colour-naming structure, not that LLMs encode perceptual colour space as humans do. See the paper for all controls, baselines and limitations.</p>
   </div>
@@ -354,7 +353,7 @@
     <div class="bib">
       <button class="copy" type="button" id="copy-btn">Copy</button>
 <pre id="bib">@inproceedings{ahmed2027words,
-  title     = {From Words to Hues: How LLMs Encode Perceptual Colour Space},
+  title     = {From Words to Hues: How LLM Representations Align with Human Colour-Naming Geometry},
   author    = {Ahmed, Rafique and Mylonas, Dimitris and Masala, Giovanni Luca and Koliousis, Alexandros},
   booktitle = {Proceedings of the 2027 Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
   year      = {2027}
@@ -365,7 +364,7 @@
 
 <footer>
   <div class="container">
-    We thank the National Deep Inference Fabric (<a href="https://ndif.us">NDIF</a>) for their kind provision of compute resources. This work was supported by the Leverhulme Trust [SCHEME / GRANT NO.].
+    We thank the National Deep Inference Fabric (<a href="https://ndif.us">NDIF</a>) for their kind provision of compute resources. This work was supported in part by the Leverhulme Trust Research Project Grant <i>Cones to Words</i> (RPG-2024-096).
   </div>
 </footer>
 
