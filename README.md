@@ -47,8 +47,8 @@ regenerated outputs may differ slightly from those in the paper.
 ## Data
 
 `data/` contains the human reference files (similarity matrices, focal
-colours, Ngram frequencies). British English files are included; Spanish and
-French files will be added.
+colours, Ngram frequencies) for British English, Spanish and French. The
+Spanish indispensable lexicon (31 terms) is listed in `config.py`.
 
 ## Citation
 
