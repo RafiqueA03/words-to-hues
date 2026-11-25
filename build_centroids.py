@@ -257,7 +257,7 @@ def main() -> None:
     parser.add_argument("--all", action="store_true", help="process every extraction run found")
     parser.add_argument("--overwrite", action="store_true", help="rebuild existing centroids")
     parser.add_argument("--base-model", action="store_true",
-                        help="responses are plain neighbour lists (base-model comparison, App I)")
+                        help="responses are plain neighbour lists (base-model comparison, App J)")
     args = parser.parse_args()
 
     if args.all:

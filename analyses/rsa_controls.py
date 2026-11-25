@@ -5,17 +5,17 @@ Each control tests whether RSA alignment depends on the correct correspondence
 between colour terms and their representations. All run at the best layer l*
 (override with --layer), with mean-centred Pearson RSMs and Kendall's tau.
 
-  permutation  Label permutation (G.1). One random permutation is applied to the
+  permutation  Label permutation (H.1). One random permutation is applied to the
                rows and columns of the human matrix; tau is recomputed against
                the fixed model RSM. 10,000 permutations, seed 0.
                p = (#null >= observed + 1) / (n + 1).
 
-  scramble     Cross-colour scrambling (G.2). Each colour's centroid is rebuilt
+  scramble     Cross-colour scrambling (H.2). Each colour's centroid is rebuilt
                from 5 neighbour vectors drawn (without replacement) from OTHER
                colours. Neighbour vectors are pooled by word across runs.
                1,000 iterations, seed 0. Same p-value formula as above.
 
-  ablation     Graded real-content ablation (G.3). Each centroid uses n of the
+  ablation     Graded real-content ablation (H.3). Each centroid uses n of the
                colour's own neighbour vectors and 5 - n from other colours,
                n = 1..4 (pooled over runs and positions). 1,000 iterations per
                level, seed n. Reports the distribution of tau at each level.
@@ -51,7 +51,7 @@ def _restrict(human: np.ndarray, order: list, keep: list) -> np.ndarray:
 
 
 # =============================================================================
-# G.1  LABEL PERMUTATION
+# H.1  LABEL PERMUTATION
 # =============================================================================
 
 def label_permutation(run_dir: Path, lang: str, layer_idx: int, seed: int = 0) -> tuple:
@@ -75,7 +75,7 @@ def label_permutation(run_dir: Path, lang: str, layer_idx: int, seed: int = 0) -
 
 
 # =============================================================================
-# G.2  CROSS-COLOUR SCRAMBLING
+# H.2  CROSS-COLOUR SCRAMBLING
 # =============================================================================
 
 def cross_colour_scramble(run_dir: Path, lang: str, layer_idx: int, seed: int = 0) -> tuple:
@@ -111,7 +111,7 @@ def cross_colour_scramble(run_dir: Path, lang: str, layer_idx: int, seed: int = 
 
 
 # =============================================================================
-# G.3  GRADED REAL-CONTENT ABLATION
+# H.3  GRADED REAL-CONTENT ABLATION
 # =============================================================================
 
 def graded_ablation(run_dir: Path, lang: str, layer_idx: int, base_seed: int = 0) -> tuple:

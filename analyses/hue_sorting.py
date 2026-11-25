@@ -11,9 +11,6 @@ order (rho_ref) and (ii) the model's own Procrustes-aligned MDS hue order from
 hue_geometry.py (rho_MDS). Both directions around the circle are tried (anchor
 fixed) and the better rho is kept. Means over runs are reported.
 
-Ported from the original analysis code; not re-verified against the original
-outputs.
-
 Usage
 -----
     python analyses/hue_sorting.py generate --lang en --model llama8b          # needs NDIF
@@ -141,9 +138,14 @@ def parse(response: str, expected: list) -> list:
 
 
 def spearman_both_ways(ref: list, model_ranks: list) -> float:
-    """Best of forward and reversed (anchor kept first) Spearman's rho."""
+    """Best Spearman's rho over the two directions around the hue circle.
+
+    `ref` holds circular reference ranks with the anchor at 0. The reverse
+    direction maps rank r to (-r) mod n, so the anchor stays first.
+    """
+    n = max(ref) + 1
     fwd = spearmanr(ref, model_ranks)[0]
-    rev = spearmanr(ref, [model_ranks[0]] + model_ranks[1:][::-1])[0]
+    rev = spearmanr([(-r) % n for r in ref], model_ranks)[0]
     return round(float(max(fwd, rev)), 4)
 
 

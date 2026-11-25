@@ -13,8 +13,7 @@ Code for the paper. For each colour term, a language model generates related
 colour names; their hidden states are averaged into a lexical-neighbourhood
 centroid and compared with human colour-naming similarity (RSA) and with the
 CAM16-UCS hue circle (MDS + Procrustes). Languages: British English, Spanish,
-French. Models: Llama-3.1 (8B, 70B) and Qwen-2.5 (7B, 72B). See the paper and
-the project page for the method and results.
+French. Models: Llama-3.1 (8B, 70B) and Qwen-2.5 (7B, 72B).
 
 ## Setup
 
@@ -22,15 +21,12 @@ the project page for the method and results.
 pip install -r requirements.txt
 ```
 
-Tested with Python 3.12.13; exact package versions are pinned in
-`requirements.txt` (scikit-learn must be below 1.10). These are the versions
-used for the paper's experiments. `requirements-lock.txt` is a full `pip freeze`
-of that experiment environment, including indirect dependencies.
+Python 3.12. `requirements.txt` pins the package versions used in the paper;
+`requirements-lock.txt` is the full environment.
 
-Hidden-state extraction (step 1) runs remotely on [NDIF](https://ndif.us) via
-[nnsight](https://nnsight.net) and needs an NDIF API key, configured in nnsight
-on your own machine. Do not put API keys in this repository. All other steps
-run locally.
+Step 1 runs remotely on [NDIF](https://ndif.us) via [nnsight](https://nnsight.net)
+and needs an NDIF API key. NDIF now requires nnsight 0.8 or later. All other
+steps run locally.
 
 ## Usage
 
@@ -41,16 +37,17 @@ python rsa.py --all                                                     # 3. lay
 python hue_geometry.py --all                                            # 4. hue reconstruction
 ```
 
-Options: `--lang {en,es,fr}`, `--model {llama8b,llama70b,qwen7b,qwen72b}`.
-Settings are in `config.py`; appendix analyses are in `analyses/`. Each
-script's header documents its inputs and outputs. Generation uses sampling, so
-regenerated outputs may differ slightly from those in the paper.
+Options: `--lang {en,es,fr}`, `--model {llama8b,llama70b,qwen7b,qwen72b}`,
+`--sweep {all,coarse,fine}` (`all` for 7-8B models, `coarse`/`fine` for 70-72B).
+Settings are in `config.py`; appendix analyses are in `analyses/`, and each
+script's header lists its inputs and outputs.
 
 ## Data
 
-`data/` contains the human reference files (similarity matrices, focal
-colours, Ngram frequencies) for British English, Spanish and French. The
-Spanish indispensable lexicon (31 terms) is listed in `config.py`.
+`data/` contains the human reference files for British English, Spanish and
+French: similarity matrices (1 − √JSD), focal colours and Ngram frequencies.
+The colour lexicons are listed in `config.py`. The Spanish naming data will be
+released with a separate publication.
 
 ## Citation
 
