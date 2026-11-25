@@ -15,7 +15,7 @@ and non-basic (non-BCT) chromatic terms are analysed separately:
   4. BCT group only: achromatic terms are projected into the MDS space with the
      Nystrom extension, for residual plots.
 
-Paper: Section 3.5, Section 4.2, Table 1, Appendix J.
+Paper: Section 3.5, Section 4.2, Table 1, Appendix K.
 
 Usage
 -----

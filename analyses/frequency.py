@@ -1,5 +1,5 @@
 """
-Lexical frequency and hue stability (paper Section 4.3, Appendix K).
+Lexical frequency and hue stability (paper Section 4.3, Appendix L).
 
 Correlates each colour term's Google Books Ngram frequency (mean 1900-2020)
 with its hue-reconstruction error (circular displacement, CD) from

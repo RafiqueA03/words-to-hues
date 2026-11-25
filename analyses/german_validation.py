@@ -1,5 +1,5 @@
 """
-Independent validation on German basic colour terms (paper Appendix J.4).
+Independent validation on German basic colour terms (paper Appendix K.4).
 
 The BrEn BCT hue reconstruction is repeated with an independent reference: the
 CAM16-UCS centroids of German BCTs from Saji et al. (2025), matched through their
@@ -53,7 +53,7 @@ def german_reference() -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="German BCT validation (Appendix J.4)")
+    parser = argparse.ArgumentParser(description="German BCT validation (Appendix K.4)")
     parser.add_argument("--model", required=True)
     parser.add_argument("--sweep", required=True)
     args = parser.parse_args()

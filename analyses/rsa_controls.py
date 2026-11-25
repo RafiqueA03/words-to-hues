@@ -1,5 +1,5 @@
 """
-RSA correspondence controls (paper Appendix G).
+RSA correspondence controls (paper Appendix H).
 
 Each control tests whether RSA alignment depends on the correct correspondence
 between colour terms and their representations. All run at the best layer l*
@@ -152,7 +152,7 @@ def graded_ablation(run_dir: Path, lang: str, layer_idx: int, base_seed: int = 0
 # =============================================================================
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="RSA correspondence controls (Appendix G)")
+    parser = argparse.ArgumentParser(description="RSA correspondence controls (Appendix H)")
     parser.add_argument("control", choices=["permutation", "scramble", "ablation"])
     parser.add_argument("--lang", required=True)
     parser.add_argument("--model", required=True)

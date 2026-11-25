@@ -57,7 +57,7 @@ MODELS = {
     "llama70b": {"hf_id": "meta-llama/Llama-3.1-70B-Instruct", "n_layers": 80, "size": "large"},
     "qwen7b":   {"hf_id": "Qwen/Qwen2.5-7B-Instruct",          "n_layers": 28, "size": "small"},
     "qwen72b":  {"hf_id": "Qwen/Qwen2.5-72B-Instruct",         "n_layers": 80, "size": "large"},
-    # Base (non-instruction-tuned) model, used only for the comparison in Appendix I.
+    # Base (non-instruction-tuned) model, used only for the comparison in Appendix J.
     "llama8b_base": {"hf_id": "meta-llama/Meta-Llama-3.1-8B",  "n_layers": 32, "size": "small"},
 }
 

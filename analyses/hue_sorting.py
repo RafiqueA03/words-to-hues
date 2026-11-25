@@ -1,5 +1,5 @@
 """
-Hue-sorting probe (paper Section 4.4, Appendix L).
+Hue-sorting probe (paper Section 4.4, Appendix M).
 
 The model receives a shuffled list of colour terms (BCT or non-BCT chromatic
 terms) and sorts them in circular hue order, starting and ending at an anchor

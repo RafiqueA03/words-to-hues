@@ -1,5 +1,5 @@
 """
-Synthetic circle-detector calibration (paper Appendix J.1).
+Synthetic circle-detector calibration (paper Appendix K.1).
 
 Checks that the geometry-recovery stage distinguishes circular from
 non-circular structure. No model, no hidden states: point sets are generated
@@ -129,7 +129,7 @@ def run_for_n(n: int) -> list:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Synthetic circle calibration (Appendix J.1)")
+    parser = argparse.ArgumentParser(description="Synthetic circle calibration (Appendix K.1)")
     parser.add_argument("--n", type=int, nargs="*", default=N_VALUES)
     args = parser.parse_args()
 

@@ -1,6 +1,6 @@
 """
 RSA robustness to the similarity measures and the RSA statistic
-(paper appendix "Robustness to Similarity Measures and RSA Statistic").
+(paper Appendix G).
 
   metric  Model side: the layer-wise RSA is recomputed with a cosine-similarity
           RSM in place of Pearson correlation (raw and mean-centred, run-averaged

@@ -1,5 +1,5 @@
 """
-Base-model extraction for the instruction-tuning comparison (paper Appendix I).
+Base-model extraction for the instruction-tuning comparison (paper Appendix J).
 
 The base (non-instruction-tuned) Llama-3.1-8B does not follow chat templates, so
 it receives a plain-text few-shot completion prompt: five demonstration lines
@@ -158,7 +158,7 @@ def extract_prompt_state(model: LanguageModel, prompt: str, colour: str,
 # =============================================================================
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Base-model extraction (Appendix I)")
+    parser = argparse.ArgumentParser(description="Base-model extraction (Appendix J)")
     parser.add_argument("--runs", type=int, default=config.NUM_RUNS)
     parser.add_argument("--prompt-states", action="store_true")
     args = parser.parse_args()
