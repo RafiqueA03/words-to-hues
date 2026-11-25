@@ -23,7 +23,9 @@ pip install -r requirements.txt
 ```
 
 Tested with Python 3.12.13; exact package versions are pinned in
-`requirements.txt` (scikit-learn must be below 1.10).
+`requirements.txt` (scikit-learn must be below 1.10). These are the versions
+used for the paper's experiments. `requirements-lock.txt` is a full `pip freeze`
+of that experiment environment, including indirect dependencies.
 
 Hidden-state extraction (step 1) runs remotely on [NDIF](https://ndif.us) via
 [nnsight](https://nnsight.net) and needs an NDIF API key, configured in nnsight
